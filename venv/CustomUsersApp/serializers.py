@@ -12,5 +12,11 @@ class CustomRegisterSerializer(RegisterSerializer):
 
     def get_cleaned_data(self):
         data = super().get_cleaned_data()
-        data['role'] = self.validated_data.get('role', 'football_player')
+        data['role'] = self.validated_data.get('role')  # Ensure to get the role from validated data
         return data
+
+    def create(self, validated_data):
+        user = super().create(validated_data)  # Call the parent create method
+        user.role = validated_data.get('role')  # Set the role from validated data
+        user.save()  # Save the user to ensure the role is saved
+        return user

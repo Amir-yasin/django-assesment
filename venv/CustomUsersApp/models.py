@@ -12,7 +12,7 @@ class CustomUser(AbstractUser):
         ('football_player', 'Football Player'),
     ]
     
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='football_player')
 
     def __str__(self):
         return self.username

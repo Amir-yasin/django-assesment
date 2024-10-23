@@ -81,7 +81,7 @@ Setup Instructions
 
 1. Clone the repository:
 
-git clone https://github.com/Amir-yasin/Django-assessment.git
+git clone https://github.com/Amir-yasin/django-assesment
 cd Django-assessment
 
 
